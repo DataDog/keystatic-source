@@ -1,22 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../../../..", "../../../..");
 
-var jsxRuntime = require('react/jsx-runtime');
+// this re-exports the source file
+module.exports = require("../../../../src/icon/icons/earOffIcon.tsx");
 
-const earOffIcon = /*#__PURE__*/jsxRuntime.jsxs("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round",
-  width: "1em",
-  height: "1em",
-  children: [/*#__PURE__*/jsxRuntime.jsx("path", {
-    d: "M6 18.5a3.5 3.5 0 1 0 7 0c0-1.57.92-2.52 2.04-3.46M6 8.5c0-.75.13-1.47.36-2.14M8.8 3.15A6.5 6.5 0 0 1 19 8.5c0 1.63-.44 2.81-1.09 3.76"
-  }), /*#__PURE__*/jsxRuntime.jsx("path", {
-    d: "M12.5 6A2.5 2.5 0 0 1 15 8.5M10 13a2 2 0 0 0 1.82-1.18M2 2l20 20"
-  })]
-});
-
-exports.earOffIcon = earOffIcon;
+unregister();

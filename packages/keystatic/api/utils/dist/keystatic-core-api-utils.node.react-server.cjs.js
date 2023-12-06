@@ -1,24 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../../..", "../../..");
 
-var readLocal = require('../../../dist/read-local-9451a6d0.node.react-server.cjs.js');
-require('fs/promises');
-require('path');
-require('../../../dist/index-bf07e3be.node.react-server.cjs.js');
-require('@markdoc/markdoc');
-require('slate');
-require('emery/assertions');
-require('emery');
-require('js-base64');
-require('crypto');
-require('../../../dist/empty-field-ui-11e96e9f.node.react-server.cjs.js');
-require('react/jsx-runtime');
-require('@emotion/weak-memoize');
-require('@sindresorhus/slugify');
-require('@braintree/sanitize-url');
-require('ignore');
+// this re-exports the source file
+module.exports = require("../../../src/api/utils.ts");
 
-
-
-exports.getAllowedDirectories = readLocal.getAllowedDirectories;
+unregister();

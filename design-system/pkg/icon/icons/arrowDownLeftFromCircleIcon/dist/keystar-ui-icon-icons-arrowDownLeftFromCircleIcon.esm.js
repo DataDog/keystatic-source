@@ -1,16 +1,1 @@
-import { jsx } from 'react/jsx-runtime';
-
-const arrowDownLeftFromCircleIcon = /*#__PURE__*/jsx("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round",
-  width: "1em",
-  height: "1em",
-  children: /*#__PURE__*/jsx("path", {
-    d: "M2 12a10 10 0 1 1 10 10M2 22l10-10M8 22H2v-6"
-  })
-});
-
-export { arrowDownLeftFromCircleIcon };
+/Users/colin.cole/webops/keystatic-source/design-system/pkg/src/icon/icons/arrowDownLeftFromCircleIcon.tsx

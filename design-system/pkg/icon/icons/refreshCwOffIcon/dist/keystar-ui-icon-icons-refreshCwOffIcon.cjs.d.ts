@@ -1,2 +1,2 @@
-export * from "../../../../dist/declarations/src/icon/icons/refreshCwOffIcon";
+export * from "../../../../src/icon/icons/refreshCwOffIcon";
 //# sourceMappingURL=keystar-ui-icon-icons-refreshCwOffIcon.cjs.d.ts.map

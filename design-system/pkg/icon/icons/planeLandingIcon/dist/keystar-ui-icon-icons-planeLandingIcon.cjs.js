@@ -1,20 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../../../..", "../../../..");
 
-var jsxRuntime = require('react/jsx-runtime');
+// this re-exports the source file
+module.exports = require("../../../../src/icon/icons/planeLandingIcon.tsx");
 
-const planeLandingIcon = /*#__PURE__*/jsxRuntime.jsx("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round",
-  width: "1em",
-  height: "1em",
-  children: /*#__PURE__*/jsxRuntime.jsx("path", {
-    d: "M2 22h20M3.77 10.77 2 9l2-4.5 1.1.55c.55.28.9.84.9 1.45s.35 1.17.9 1.45L8 8.5l3-6 1.05.53a2 2 0 0 1 1.09 1.52l.72 5.4a2 2 0 0 0 1.09 1.52l4.4 2.2c.42.22.78.55 1.01.96l.6 1.03c.49.88-.06 1.98-1.06 2.1l-1.18.15c-.47.06-.95-.02-1.37-.24L4.29 11.15a2 2 0 0 1-.52-.38Z"
-  })
-});
-
-exports.planeLandingIcon = planeLandingIcon;
+unregister();

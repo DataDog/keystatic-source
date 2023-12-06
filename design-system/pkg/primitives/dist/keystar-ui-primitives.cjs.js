@@ -1,16 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../..", "../..");
 
-// constrain "@keystar/ui" to "@keystar/primitives", without publishing
-const TOKEN_PREFIX = 'kui';
-const THEME_DEFAULT = `${TOKEN_PREFIX}-theme`;
-const SCHEME_AUTO = `${TOKEN_PREFIX}-scheme--auto`;
-const SCHEME_LIGHT = `${TOKEN_PREFIX}-scheme--light`;
-const SCHEME_DARK = `${TOKEN_PREFIX}-scheme--dark`;
+// this re-exports the source file
+module.exports = require("../../src/primitives/index.ts");
 
-exports.SCHEME_AUTO = SCHEME_AUTO;
-exports.SCHEME_DARK = SCHEME_DARK;
-exports.SCHEME_LIGHT = SCHEME_LIGHT;
-exports.THEME_DEFAULT = THEME_DEFAULT;
-exports.TOKEN_PREFIX = TOKEN_PREFIX;
+unregister();

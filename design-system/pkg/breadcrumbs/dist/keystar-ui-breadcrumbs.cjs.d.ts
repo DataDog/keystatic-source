@@ -1,2 +1,2 @@
-export * from "../../dist/declarations/src/breadcrumbs/index";
+export * from "../../src/breadcrumbs/index";
 //# sourceMappingURL=keystar-ui-breadcrumbs.cjs.d.ts.map

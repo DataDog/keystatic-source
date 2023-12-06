@@ -1,54 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../..", "../..");
 
-var api = require('../../dist/api-3f710458.react-server.cjs.js');
-var index = require('../../dist/index-c563c62e.react-server.cjs.js');
-require('../../dist/empty-field-ui-563fc621.react-server.cjs.js');
-require('react/jsx-runtime');
-require('emery');
-require('@sindresorhus/slugify');
-require('@braintree/sanitize-url');
-require('@markdoc/markdoc');
-require('slate');
-require('emery/assertions');
-require('js-base64');
-require('../../dist/hex-f8a6aa90.react-server.cjs.js');
-require('@emotion/weak-memoize');
+// this re-exports the source file
+module.exports = require("../../src/component-blocks/index.tsx");
 
-function CloudImagePreview() {}
-let cloudImageToolbarIcon = undefined;
-
-const cloudImageSchema = {
-  src: index.text({
-    label: 'URL',
-    validation: {
-      length: {
-        min: 1
-      }
-    }
-  }),
-  alt: index.text({
-    label: 'Alt text'
-  }),
-  height: api.integer({
-    label: 'Height'
-  }),
-  width: api.integer({
-    label: 'Width'
-  })
-};
-
-/** @deprecated Experimental */
-function cloudImage(args) {
-  return api.component({
-    label: args.label,
-    schema: cloudImageSchema,
-    preview: CloudImagePreview,
-    chromeless: true,
-    toolbar: null,
-    toolbarIcon: cloudImageToolbarIcon
-  });
-}
-
-exports.cloudImage = cloudImage;
+unregister();

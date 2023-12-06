@@ -1,18 +1,1 @@
-import { jsx } from 'react/jsx-runtime';
-
-const circleIcon = /*#__PURE__*/jsx("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round",
-  width: "1em",
-  height: "1em",
-  children: /*#__PURE__*/jsx("circle", {
-    cx: 12,
-    cy: 12,
-    r: 10
-  })
-});
-
-export { circleIcon };
+/Users/colin.cole/webops/keystatic-source/design-system/pkg/src/icon/icons/circleIcon.tsx

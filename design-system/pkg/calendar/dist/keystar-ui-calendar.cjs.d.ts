@@ -1,2 +1,2 @@
-export * from "../../dist/declarations/src/calendar/index";
+export * from "../../src/calendar/index";
 //# sourceMappingURL=keystar-ui-calendar.cjs.d.ts.map

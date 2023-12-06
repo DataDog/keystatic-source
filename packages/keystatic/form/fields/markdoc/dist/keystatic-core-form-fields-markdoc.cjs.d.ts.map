@@ -1,1 +1,1 @@
-{"version":3,"file":"keystatic-core-form-fields-markdoc.cjs.d.ts","sourceRoot":"","sources":["../../../../dist/declarations/src/form/fields/markdoc/index.d.ts"],"names":[],"mappings":"AAAA"}
+{"version":3,"file":"keystatic-core-form-fields-markdoc.cjs.d.ts","sourceRoot":"","sources":["../../../../src/form/fields/markdoc/index.tsx"],"names":[],"mappings":"AAAA"}

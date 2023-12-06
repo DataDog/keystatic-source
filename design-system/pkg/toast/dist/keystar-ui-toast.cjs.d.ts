@@ -1,2 +1,2 @@
-export * from "../../dist/declarations/src/toast/index";
+export * from "../../src/toast/index";
 //# sourceMappingURL=keystar-ui-toast.cjs.d.ts.map

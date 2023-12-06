@@ -1,2 +1,2 @@
-export * from "./declarations/src/index";
+export * from "../src/index";
 //# sourceMappingURL=keystatic-create.cjs.d.ts.map

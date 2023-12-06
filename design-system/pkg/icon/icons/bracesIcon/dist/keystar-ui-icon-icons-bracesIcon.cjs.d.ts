@@ -1,2 +1,2 @@
-export * from "../../../../dist/declarations/src/icon/icons/bracesIcon";
+export * from "../../../../src/icon/icons/bracesIcon";
 //# sourceMappingURL=keystar-ui-icon-icons-bracesIcon.cjs.d.ts.map

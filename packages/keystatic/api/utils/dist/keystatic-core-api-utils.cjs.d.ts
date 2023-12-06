@@ -1,2 +1,2 @@
-export * from "../../../dist/declarations/src/api/utils";
+export * from "../../../src/api/utils";
 //# sourceMappingURL=keystatic-core-api-utils.cjs.d.ts.map

@@ -1,75 +1,16 @@
-'use client';
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../..", "../..");
 
-var utils = require('@react-aria/utils');
-var React = require('react');
-var style = require('@keystar/ui/style');
-var typography = require('@keystar/ui/typography');
-var utils$1 = require('@keystar/ui/utils');
-var jsxRuntime = require('react/jsx-runtime');
+// this re-exports the source file
+module.exports = require("../../src/status-light/index.ts");
 
-/** Status lights describe the state or condition of an entity. */
-const StatusLight = /*#__PURE__*/React.forwardRef(function StatusLight(props, forwardedRef) {
-  let {
-    children,
-    role,
-    tone = 'neutral'
-  } = props;
-  const styleProps = style.useStyleProps(props);
-  if (!children && !props['aria-label']) {
-    console.warn('If no children are provided, an aria-label must be specified');
-  }
-  if (!role && (props['aria-label'] || props['aria-labelledby'])) {
-    console.warn('A labelled StatusLight must have a role.');
-  }
-  return /*#__PURE__*/jsxRuntime.jsx("div", {
-    ...utils.filterDOMProps(props, {
-      labelable: true
-    }),
-    ...styleProps,
-    ref: forwardedRef,
-    "data-tone": tone,
-    className: style.classNames(style.css({
-      alignItems: 'center',
-      color: style.tokenSchema.color.foreground.neutral,
-      display: 'flex',
-      gap: style.tokenSchema.size.space.regular,
-      height: style.tokenSchema.size.element.small,
-      // indicator
-      '&::before': {
-        content: '""',
-        backgroundColor: style.tokenSchema.color.foreground.neutralTertiary,
-        borderRadius: style.tokenSchema.size.radius.full,
-        height: style.tokenSchema.size.scale[100],
-        width: style.tokenSchema.size.scale[100]
-      },
-      // special case for neutral
-      '&[data-tone=neutral]': {
-        color: style.tokenSchema.color.foreground.neutralSecondary
-      },
-      '&[data-tone=accent]::before': {
-        backgroundColor: style.tokenSchema.color.background.accentEmphasis
-      },
-      '&[data-tone=caution]::before': {
-        backgroundColor: style.tokenSchema.color.background.cautionEmphasis
-      },
-      '&[data-tone=critical]::before': {
-        backgroundColor: style.tokenSchema.color.background.criticalEmphasis
-      },
-      '&[data-tone=pending]::before': {
-        backgroundColor: style.tokenSchema.color.background.pendingEmphasis
-      },
-      '&[data-tone=positive]::before': {
-        backgroundColor: style.tokenSchema.color.background.positiveEmphasis
-      }
-    }), styleProps.className),
-    children: utils$1.isReactText(children) ? /*#__PURE__*/jsxRuntime.jsx(typography.Text, {
-      color: "inherit",
-      children: children
-    }) : children
-  });
-});
-
-exports.StatusLight = StatusLight;
+unregister();

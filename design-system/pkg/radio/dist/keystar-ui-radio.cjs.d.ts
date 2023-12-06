@@ -1,2 +1,2 @@
-export * from "../../dist/declarations/src/radio/index";
+export * from "../../src/radio/index";
 //# sourceMappingURL=keystar-ui-radio.cjs.d.ts.map

@@ -1,66 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../..", "..");
 
-var node_url = require('node:url');
-var path = require('node:path');
-var fs = require('node:fs/promises');
+// this re-exports the source file
+module.exports = require("../src/index.ts");
 
-function _interopDefault (e) { return e && e.__esModule ? e : { 'default': e }; }
-
-var path__default = /*#__PURE__*/_interopDefault(path);
-var fs__default = /*#__PURE__*/_interopDefault(fs);
-
-function keystatic() {
-  return {
-    name: 'keystatic',
-    hooks: {
-      'astro:config:setup': async ({
-        injectRoute,
-        updateConfig,
-        config
-      }) => {
-        if (config.output !== 'hybrid') {
-          throw new Error("Keystatic requires `output: 'hybrid'` in your Astro config");
-        }
-        const vite = {
-          plugins: [{
-            name: 'keystatic',
-            resolveId(id) {
-              if (id === 'virtual:keystatic-config') {
-                return this.resolve('./keystatic.config', './a');
-              }
-              return null;
-            }
-          }],
-          optimizeDeps: {
-            entries: ['keystatic.config.*', '.astro/keystatic-imports.js']
-          }
-        };
-        const dotAstroDir = path__default["default"].join(node_url.fileURLToPath(config.root), '.astro');
-        await fs__default["default"].mkdir(dotAstroDir, {
-          recursive: true
-        });
-        await fs__default["default"].writeFile(path__default["default"].join(dotAstroDir, 'keystatic-imports.js'), `import "@keystatic/astro/ui";
-import "@keystatic/astro/api";
-import "@keystatic/core/ui";
-`);
-        updateConfig({
-          vite
-        });
-        injectRoute({
-          entryPoint: '@keystatic/astro/internal/keystatic-astro-page.astro',
-          pattern: '/keystatic/[...params]',
-          prerender: false
-        });
-        injectRoute({
-          entryPoint: '@keystatic/astro/internal/keystatic-api.js',
-          pattern: '/api/keystatic/[...params]',
-          prerender: false
-        });
-      }
-    }
-  };
-}
-
-exports["default"] = keystatic;
+unregister();

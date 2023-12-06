@@ -1,16 +1,1 @@
-import { jsx } from 'react/jsx-runtime';
-
-const terminalIcon = /*#__PURE__*/jsx("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round",
-  width: "1em",
-  height: "1em",
-  children: /*#__PURE__*/jsx("path", {
-    d: "m4 17 6-6-6-6M12 19h8"
-  })
-});
-
-export { terminalIcon };
+/Users/colin.cole/webops/keystatic-source/design-system/pkg/src/icon/icons/terminalIcon.tsx

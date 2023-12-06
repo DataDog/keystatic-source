@@ -1,3 +1,3 @@
-export * from "./declarations/src/index";
-export { default } from "./declarations/src/index";
+export * from "../src/index";
+export { default } from "../src/index";
 //# sourceMappingURL=keystatic-astro.cjs.d.ts.map

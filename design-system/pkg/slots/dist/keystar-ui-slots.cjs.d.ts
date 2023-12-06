@@ -1,2 +1,2 @@
-export * from "../../dist/declarations/src/slots/index";
+export * from "../../src/slots/index";
 //# sourceMappingURL=keystar-ui-slots.cjs.d.ts.map

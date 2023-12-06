@@ -1,2 +1,2 @@
-export * from "../../dist/declarations/src/api";
+export * from "../../src/api";
 //# sourceMappingURL=keystatic-remix-api.cjs.d.ts.map

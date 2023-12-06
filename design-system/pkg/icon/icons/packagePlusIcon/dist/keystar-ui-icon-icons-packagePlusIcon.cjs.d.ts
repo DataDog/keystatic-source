@@ -1,2 +1,2 @@
-export * from "../../../../dist/declarations/src/icon/icons/packagePlusIcon";
+export * from "../../../../src/icon/icons/packagePlusIcon";
 //# sourceMappingURL=keystar-ui-icon-icons-packagePlusIcon.cjs.d.ts.map

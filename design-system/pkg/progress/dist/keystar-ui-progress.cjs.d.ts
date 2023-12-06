@@ -1,2 +1,2 @@
-export * from "../../dist/declarations/src/progress/index";
+export * from "../../src/progress/index";
 //# sourceMappingURL=keystar-ui-progress.cjs.d.ts.map

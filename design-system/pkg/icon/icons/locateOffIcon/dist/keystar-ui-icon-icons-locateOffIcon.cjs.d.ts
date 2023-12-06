@@ -1,2 +1,2 @@
-export * from "../../../../dist/declarations/src/icon/icons/locateOffIcon";
+export * from "../../../../src/icon/icons/locateOffIcon";
 //# sourceMappingURL=keystar-ui-icon-icons-locateOffIcon.cjs.d.ts.map

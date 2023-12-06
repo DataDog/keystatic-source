@@ -1,1 +1,1 @@
-{"version":3,"file":"keystar-ui-core.cjs.d.ts","sourceRoot":"","sources":["../../dist/declarations/src/core/index.d.ts"],"names":[],"mappings":"AAAA"}
+{"version":3,"file":"keystar-ui-core.cjs.d.ts","sourceRoot":"","sources":["../../src/core/index.ts"],"names":[],"mappings":"AAAA"}

@@ -1,2 +1,2 @@
-export * from "../../../../dist/declarations/src/icon/icons/chevronsDownUpIcon";
+export * from "../../../../src/icon/icons/chevronsDownUpIcon";
 //# sourceMappingURL=keystar-ui-icon-icons-chevronsDownUpIcon.cjs.d.ts.map

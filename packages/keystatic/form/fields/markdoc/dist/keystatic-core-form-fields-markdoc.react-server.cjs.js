@@ -1,73 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../../../..", "../../../..");
 
-var Markdoc = require('@markdoc/markdoc');
-var emptyFieldUi = require('../../../../dist/empty-field-ui-563fc621.react-server.cjs.js');
-var jsxRuntime = require('react/jsx-runtime');
+// this re-exports the source file
+module.exports = require("../../../../src/form/fields/markdoc/index.tsx");
 
-function _interopDefault (e) { return e && e.__esModule ? e : { 'default': e }; }
-
-var Markdoc__default = /*#__PURE__*/_interopDefault(Markdoc);
-
-const textDecoder = new TextDecoder();
-
-/**
- * @deprecated This is experimental and buggy, use at your own risk.
- */
-function __experimental_markdoc_field({
-  label,
-  description,
-  config
-}) {
-  let schema;
-  let getSchema = () => {
-    if (!schema) {
-      schema = emptyFieldUi.createEditorSchema();
-    }
-    return schema;
-  };
-  return {
-    kind: 'form',
-    formKind: 'content',
-    defaultValue() {
-      return emptyFieldUi.getDefaultValue(getSchema());
-    },
-    Input(props) {
-      return /*#__PURE__*/jsxRuntime.jsx(emptyFieldUi.DocumentFieldInput, {
-        description: description,
-        label: label,
-        ...props
-      });
-    },
-    parse: (_, {
-      content,
-      other
-    }) => {
-      return emptyFieldUi.parseToEditorState(content, getSchema());
-    },
-    contentExtension: '.md',
-    validate(value) {
-      return value;
-    },
-    serialize(value) {
-      return {
-        ...emptyFieldUi.serializeFromEditorState(),
-        external: new Map(),
-        value: undefined
-      };
-    },
-    reader: {
-      parse: (_, {
-        content
-      }) => {
-        const text = textDecoder.decode(content);
-        return {
-          ast: Markdoc__default["default"].parse(text)
-        };
-      }
-    }
-  };
-}
-
-exports.__experimental_markdoc_field = __experimental_markdoc_field;
+unregister();

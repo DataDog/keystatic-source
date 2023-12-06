@@ -1,1 +1,1 @@
-{"version":3,"file":"keystatic-next-ui-app.cjs.d.ts","sourceRoot":"","sources":["../../../dist/declarations/src/ui/app.d.ts"],"names":[],"mappings":"AAAA"}
+{"version":3,"file":"keystatic-next-ui-app.cjs.d.ts","sourceRoot":"","sources":["../../../src/ui/app.tsx"],"names":[],"mappings":"AAAA"}

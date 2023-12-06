@@ -1,24 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../../..", "../../..");
 
-var React = require('react');
+// this re-exports the source file
+module.exports = require("../../../src/utils/ts/index.ts");
 
-// export type PropsWithElementType<P = unknown> = P & { elementType?: HTMLTag };
-
-// https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
-
-/**
- * This is a hack for sure. The thing is, getting a component to intelligently
- * infer props based on a component or JSX string passed into an `elementType` prop is
- * kind of a huge pain. Getting it to work and satisfy the constraints of
- * `forwardRef` seems dang near impossible. To avoid needing to do this awkward
- * type song-and-dance every time we want to forward a ref into a component
- * that accepts an `elementType` prop, we abstract all of that mess to this function for
- * the time time being.
- */
-function forwardRefWithAs(render) {
-  return /*#__PURE__*/React.forwardRef(render);
-}
-
-exports.forwardRefWithAs = forwardRefWithAs;
+unregister();

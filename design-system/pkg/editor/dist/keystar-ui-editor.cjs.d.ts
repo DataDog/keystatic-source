@@ -1,2 +1,2 @@
-export * from "../../dist/declarations/src/editor/index";
+export * from "../../src/editor/index";
 //# sourceMappingURL=keystar-ui-editor.cjs.d.ts.map

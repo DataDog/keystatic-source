@@ -1,22 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../../../..", "../../../..");
 
-var jsxRuntime = require('react/jsx-runtime');
+// this re-exports the source file
+module.exports = require("../../../../src/icon/icons/hopIcon.tsx");
 
-const hopIcon = /*#__PURE__*/jsxRuntime.jsxs("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round",
-  width: "1em",
-  height: "1em",
-  children: [/*#__PURE__*/jsxRuntime.jsx("path", {
-    d: "M17.5 5.5C19 7 20.5 9 21 11c-2.5.5-5 .5-8.5-1M5.5 17.5C7 19 9 20.5 11 21c.5-2.5.5-5-1-8.5M16.5 11.5c1 2 1 3.5 1 6-2.5 0-4 0-6-1M20 11.5c1 1.5 2 3.5 2 4.5-1.5.5-3 0-4.5-.5M11.5 20c1.5 1 3.5 2 4.5 2 .5-1.5 0-3-.5-4.5M20.5 16.5c1 2 1.5 3.5 1.5 5.5-2 0-3.5-.5-5.5-1.5"
-  }), /*#__PURE__*/jsxRuntime.jsx("path", {
-    d: "M4.783 4.782C8.493 1.072 14.5 1 18 5c-1 1-4.5 2-6.5 1.5 1 1.5 1 4 .5 5.5-1.5.5-4 .5-5.5-.5C7 13.5 6 17 5 18c-4-3.5-3.927-9.508-.217-13.218ZM4.5 4.5 3 3c-.184-.185-.184-.816 0-1"
-  })]
-});
-
-exports.hopIcon = hopIcon;
+unregister();

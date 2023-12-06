@@ -1,48 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../..", "../..");
 
-var NextRootProvider = require('../../dist/NextRootProvider-48416700.cjs.js');
-var primitives = require('@keystar/ui/primitives');
-var jsxRuntime = require('react/jsx-runtime');
-var useRootColorScheme = require('../../dist/useRootColorScheme-7bff500e.cjs.js');
+// this re-exports the source file
+module.exports = require("../../src/next/index.ts");
 
-const script = `
-let classList = document.documentElement.classList;
-let storedPreference = localStorage.getItem('keystatic-root-color-scheme');
-let schemeClasses = [...classList].filter((name) => name.includes('scheme'));
-
-if (storedPreference === 'dark') {
-  classList.remove(schemeClasses);
-  classList.add('${primitives.SCHEME_DARK}');
-} else if (storedPreference === 'light') {
-  classList.remove(schemeClasses);
-  classList.add('${primitives.SCHEME_LIGHT}');
-} else {
-  classList.remove(schemeClasses);
-  classList.add('${primitives.SCHEME_AUTO}');
-}
-`.replace(/\n|\s{2,}/g, '');
-
-/** @deprecated use `nextRootScript` instead. */
-const mediaQueryOnlyColorSchemeScaleScript = /*#__PURE__*/jsxRuntime.jsx("script", {
-  dangerouslySetInnerHTML: {
-    __html: script
-  }
-});
-const nextRootScript = /*#__PURE__*/jsxRuntime.jsx("script", {
-  dangerouslySetInnerHTML: {
-    __html: script
-  }
-});
-
-Object.defineProperty(exports, 'NextRootProvider', {
-  enumerable: true,
-  get: function () { return NextRootProvider.NextRootProvider; }
-});
-Object.defineProperty(exports, 'useRootColorScheme', {
-  enumerable: true,
-  get: function () { return useRootColorScheme.useRootColorScheme; }
-});
-exports.mediaQueryOnlyColorSchemeScaleScript = mediaQueryOnlyColorSchemeScaleScript;
-exports.nextRootScript = nextRootScript;
+unregister();

@@ -1,83 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../..", "../..");
 
-var nodePath = require('node:path');
-var nodeFs = require('node:fs/promises');
-var generic = require('../../dist/generic-3e487df8.react-server.cjs.js');
-require('react/jsx-runtime');
-require('../../dist/index-c563c62e.react-server.cjs.js');
-require('@markdoc/markdoc');
-require('slate');
-require('emery/assertions');
-require('emery');
-require('js-base64');
-require('../../dist/hex-f8a6aa90.react-server.cjs.js');
-require('../../dist/empty-field-ui-563fc621.react-server.cjs.js');
-require('@emotion/weak-memoize');
-require('@sindresorhus/slugify');
-require('@braintree/sanitize-url');
-require('../../dist/required-files-da3c267b.react-server.cjs.js');
-require('js-yaml');
-require('react');
+// this re-exports the source file
+module.exports = require("../../src/reader/index.ts");
 
-function _interopDefault (e) { return e && e.__esModule ? e : { 'default': e }; }
-
-var nodePath__default = /*#__PURE__*/_interopDefault(nodePath);
-var nodeFs__default = /*#__PURE__*/_interopDefault(nodeFs);
-
-function createReader(repoPath, config) {
-  const fs = {
-    async fileExists(path) {
-      try {
-        await nodeFs__default["default"].stat(nodePath__default["default"].join(repoPath, path));
-        return true;
-      } catch (err) {
-        if (err.code === 'ENOENT') return false;
-        throw err;
-      }
-    },
-    async readdir(path) {
-      try {
-        const entries = await nodeFs__default["default"].readdir(nodePath__default["default"].join(repoPath, path), {
-          withFileTypes: true
-        });
-        const filtered = [];
-        for (const entry of entries) {
-          if (entry.isDirectory()) {
-            filtered.push({
-              name: entry.name,
-              kind: 'directory'
-            });
-          }
-          if (entry.isFile()) {
-            filtered.push({
-              name: entry.name,
-              kind: 'file'
-            });
-          }
-        }
-        return filtered;
-      } catch (err) {
-        if (err.code === 'ENOENT') return [];
-        throw err;
-      }
-    },
-    async readFile(path) {
-      try {
-        return await nodeFs__default["default"].readFile(nodePath__default["default"].join(repoPath, path));
-      } catch (err) {
-        if (err.code === 'ENOENT') return null;
-        throw err;
-      }
-    }
-  };
-  return {
-    collections: Object.fromEntries(Object.keys(config.collections || {}).map(key => [key, generic.collectionReader(key, config, fs)])),
-    singletons: Object.fromEntries(Object.keys(config.singletons || {}).map(key => [key, generic.singletonReader(key, config, fs)])),
-    repoPath,
-    config
-  };
-}
-
-exports.createReader = createReader;
+unregister();

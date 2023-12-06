@@ -1,36 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../../../..", "../../../..");
 
-var jsxRuntime = require('react/jsx-runtime');
+// this re-exports the source file
+module.exports = require("../../../../src/icon/icons/paletteIcon.tsx");
 
-const paletteIcon = /*#__PURE__*/jsxRuntime.jsxs("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round",
-  width: "1em",
-  height: "1em",
-  children: [/*#__PURE__*/jsxRuntime.jsx("circle", {
-    cx: 13.5,
-    cy: 6.5,
-    r: 0.5
-  }), /*#__PURE__*/jsxRuntime.jsx("circle", {
-    cx: 17.5,
-    cy: 10.5,
-    r: 0.5
-  }), /*#__PURE__*/jsxRuntime.jsx("circle", {
-    cx: 8.5,
-    cy: 7.5,
-    r: 0.5
-  }), /*#__PURE__*/jsxRuntime.jsx("circle", {
-    cx: 6.5,
-    cy: 12.5,
-    r: 0.5
-  }), /*#__PURE__*/jsxRuntime.jsx("path", {
-    d: "M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"
-  })]
-});
-
-exports.paletteIcon = paletteIcon;
+unregister();

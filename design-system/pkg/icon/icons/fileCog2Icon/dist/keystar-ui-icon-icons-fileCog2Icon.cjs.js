@@ -1,28 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../../../..", "../../../..");
 
-var jsxRuntime = require('react/jsx-runtime');
+// this re-exports the source file
+module.exports = require("../../../../src/icon/icons/fileCog2Icon.tsx");
 
-const fileCog2Icon = /*#__PURE__*/jsxRuntime.jsxs("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round",
-  width: "1em",
-  height: "1em",
-  children: [/*#__PURE__*/jsxRuntime.jsx("path", {
-    d: "M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
-  }), /*#__PURE__*/jsxRuntime.jsx("path", {
-    d: "M14 2v6h6"
-  }), /*#__PURE__*/jsxRuntime.jsx("circle", {
-    cx: 12,
-    cy: 15,
-    r: 2
-  }), /*#__PURE__*/jsxRuntime.jsx("path", {
-    d: "M12 12v1M12 17v1M14.6 13.5l-.87.5M10.27 16l-.87.5M14.6 16.5l-.87-.5M10.27 14l-.87-.5"
-  })]
-});
-
-exports.fileCog2Icon = fileCog2Icon;
+unregister();

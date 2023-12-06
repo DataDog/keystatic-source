@@ -1,2 +1,2 @@
-export * from "../../dist/declarations/src/utils/index";
+export * from "../../src/utils/index";
 //# sourceMappingURL=keystar-ui-utils.cjs.d.ts.map

@@ -1,2 +1,2 @@
-export * from "../../dist/declarations/src/combobox/index";
+export * from "../../src/combobox/index";
 //# sourceMappingURL=keystar-ui-combobox.cjs.d.ts.map

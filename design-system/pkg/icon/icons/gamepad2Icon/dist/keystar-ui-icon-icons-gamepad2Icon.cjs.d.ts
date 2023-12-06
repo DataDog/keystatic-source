@@ -1,2 +1,2 @@
-export * from "../../../../dist/declarations/src/icon/icons/gamepad2Icon";
+export * from "../../../../src/icon/icons/gamepad2Icon";
 //# sourceMappingURL=keystar-ui-icon-icons-gamepad2Icon.cjs.d.ts.map

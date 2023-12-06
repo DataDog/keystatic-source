@@ -1,2 +1,2 @@
-export * from "../../../../dist/declarations/src/icon/icons/messageCircleIcon";
+export * from "../../../../src/icon/icons/messageCircleIcon";
 //# sourceMappingURL=keystar-ui-icon-icons-messageCircleIcon.cjs.d.ts.map

@@ -1,16 +1,1 @@
-import { jsx } from 'react/jsx-runtime';
-
-const touchpadOffIcon = /*#__PURE__*/jsx("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round",
-  width: "1em",
-  height: "1em",
-  children: /*#__PURE__*/jsx("path", {
-    d: "M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16M2 14h12M22 14h-2M12 20v-6M2 2l20 20M22 16V6a2 2 0 0 0-2-2H10"
-  })
-});
-
-export { touchpadOffIcon };
+/Users/colin.cole/webops/keystatic-source/design-system/pkg/src/icon/icons/touchpadOffIcon.tsx

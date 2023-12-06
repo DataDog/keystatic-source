@@ -1,34 +1,16 @@
-'use strict';
+"use strict";
+// this file might look strange and you might be wondering what it's for
+// it's lets you import your source files by importing this entrypoint
+// as you would import it if it was built with preconstruct build
+// this file is slightly different to some others though
+// it has a require hook which compiles your code with Babel
+// this means that you don't have to set up @babel/register or anything like that
+// but you can still require this module and it'll be compiled
 
-Object.defineProperty(exports, '__esModule', { value: true });
+// this bit of code imports the require hook and registers it
+let unregister = require("../../../../node_modules/.pnpm/@preconstruct+hook@0.4.0/node_modules/@preconstruct/hook").___internalHook(typeof __dirname === 'undefined' ? undefined : __dirname, "../../../..", "../..");
 
-require('server-only');
-var react = require('react');
-var reader_refresh_client = require('../../dist/reader-refresh-client-4dee7fdb.cjs.js');
-var utils = require('../../dist/utils-646f1413.cjs.js');
-var jsxRuntime = require('react/jsx-runtime');
-require('@keystatic/core/api/utils');
-require('path');
-require('fs/promises');
-require('crypto');
+// this re-exports the source file
+module.exports = require("../../src/reader-refresh.tsx");
 
-async function ReaderRefreshInner(props) {
-  return /*#__PURE__*/jsxRuntime.jsx(reader_refresh_client.ReaderRefreshClient, {
-    currentKey: await utils.getReaderKey(utils.getResolvedDirectories(props.reader.config, props.reader.repoPath))
-  });
-}
-function ReaderRefresh(props) {
-  if (process.env.NODE_ENV !== 'development') {
-    return null;
-  }
-  return /*#__PURE__*/jsxRuntime.jsx(react.Suspense, {
-    fallback: null,
-    children: /*#__PURE__*/jsxRuntime.jsx(ReaderRefreshInner
-    //
-    , {
-      reader: props.reader
-    })
-  });
-}
-
-exports.ReaderRefresh = ReaderRefresh;
+unregister();

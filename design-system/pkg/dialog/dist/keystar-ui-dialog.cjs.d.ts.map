@@ -1,1 +1,1 @@
-{"version":3,"file":"keystar-ui-dialog.cjs.d.ts","sourceRoot":"","sources":["../../dist/declarations/src/dialog/index.d.ts"],"names":[],"mappings":"AAAA"}
+{"version":3,"file":"keystar-ui-dialog.cjs.d.ts","sourceRoot":"","sources":["../../src/dialog/index.ts"],"names":[],"mappings":"AAAA"}

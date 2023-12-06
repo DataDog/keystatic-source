@@ -1,1 +1,1 @@
-{"version":3,"file":"keystar-ui-icon-icons-lockIcon.cjs.d.ts","sourceRoot":"","sources":["../../../../dist/declarations/src/icon/icons/lockIcon.d.ts"],"names":[],"mappings":"AAAA"}
+{"version":3,"file":"keystar-ui-icon-icons-lockIcon.cjs.d.ts","sourceRoot":"","sources":["../../../../src/icon/icons/lockIcon.tsx"],"names":[],"mappings":"AAAA"}

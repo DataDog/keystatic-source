@@ -1,16 +1,1 @@
-import { jsx } from 'react/jsx-runtime';
-
-const arrowBigUpIcon = /*#__PURE__*/jsx("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round",
-  width: "1em",
-  height: "1em",
-  children: /*#__PURE__*/jsx("path", {
-    d: "M9 18v-6H5l7-7 7 7h-4v6H9z"
-  })
-});
-
-export { arrowBigUpIcon };
+/Users/colin.cole/webops/keystatic-source/design-system/pkg/src/icon/icons/arrowBigUpIcon.tsx
